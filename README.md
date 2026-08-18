@@ -20,11 +20,14 @@ lazy-memory 是面向 AI 编码代理（pi / Claude Code 等支持 skill 的 CLI
 
 ```
 lazy-memory/
-├── SKILL.md                    # 触发时机与取用入口
-├── references/PROTOCOL.md      # 协议总纲：一切格式与规则的唯一真相源
-└── scripts/
-    ├── verify.sh               # 批量重跑历史 code 验证器（L2 层）
-    └── status.sh               # 查询实体最新验证状态（门控）
+├── README.md                    # 项目说明
+├── LICENSE                      # MIT
+└── skill/                       # skill 全部内容，整体复制即可安装
+    ├── SKILL.md                 # 触发时机与取用入口
+    ├── references/PROTOCOL.md   # 协议总纲：一切格式与规则的唯一真相源
+    └── scripts/
+        ├── verify.sh            # 批量重跑历史 code 验证器（L2 层）
+        └── status.sh            # 查询实体最新验证状态（门控）
 ```
 
 运行时记忆库（不随仓库分发，git 已忽略）：
@@ -39,7 +42,7 @@ lazy-memory/
 
 ```bash
 mkdir -p ~/.pi/skills
-cp -r lazy-memory ~/.pi/skills/
+cp -r lazy-memory/skill ~/.pi/skills/lazy-memory
 ```
 
 其他支持 skill 的代理参照其 skill 目录安装即可。
